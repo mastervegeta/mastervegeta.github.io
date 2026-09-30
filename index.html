@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veikka Kortelainen</title>
+<meta name="description" content="Veikka Kortelainen: CTF writeups, security tooling and small Python projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+
+<header class="hero">
+  <p class="mono kicker">~/mastervegeta $ whoami</p>
+  <h1>Veikka Kortelainen</h1>
+  <p class="lede">I work on security: CTF challenges, bug-bounty tooling and
+  Android app analysis. I write down how each problem was actually solved,
+  including the approaches that didn't work.</p>
+  <nav class="links">
+    <a href="https://github.com/mastervegeta">GitHub</a>
+    <a href="https://learn.cylabacademy.org/users/xxtentacion">CyLab Academy</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+  </nav>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <article class="project featured">
+    <div class="project-head">
+      <h3><a href="https://github.com/mastervegeta/ctf-writeups">ctf-writeups</a></h3>
+      <span class="tag">Security · Writing</span>
+    </div>
+    <p>Writeups for picoCTF / CyLab Academy challenges. Each one follows the
+    path I actually took: failed approaches stay next to the step where they
+    failed, because they teach more than the final answer does. The index is
+    generated from each writeup's frontmatter, and CI fails when it goes stale.</p>
+    <div class="stats">
+      <div><strong>31</strong><span>writeups</span></div>
+      <div><strong>11</strong><span>forensics</span></div>
+      <div><strong>10</strong><span>general skills</span></div>
+      <div><strong>5</strong><span>cryptography</span></div>
+      <div><strong>5</strong><span>reversing</span></div>
+    </div>
+    <p class="sub">Highlights:</p>
+    <ul class="highlights">
+      <li><a href="https://github.com/mastervegeta/ctf-writeups/tree/main/writeups/cylabacademy/cryptography/power-analysis-part-2">PowerAnalysis Part 2</a>: AES key recovery from power traces with correlation power analysis</li>
+      <li><a href="https://github.com/mastervegeta/ctf-writeups/tree/main/writeups/cylabacademy/cryptography/rsa-oracle">RSA Oracle</a>: chosen-ciphertext attack using RSA malleability</li>
+      <li><a href="https://github.com/mastervegeta/ctf-writeups/tree/main/writeups/cylabacademy/forensics/m00nwalk2">m00nwalk2</a>: SSTV audio decoding and steghide</li>
+      <li><a href="https://github.com/mastervegeta/ctf-writeups/tree/main/writeups/cylabacademy/reverse-engineering/vault-door-8">vault-door-8</a>: undoing a Java bit-permutation scrambler</li>
+      <li><a href="https://github.com/mastervegeta/ctf-writeups/tree/main/writeups/cylabacademy/reverse-engineering/ready-gladiator-2">Ready Gladiator 2</a>: CoreWars warriors in Redcode</li>
+    </ul>
+    <p class="stack mono">Python · pwntools · numpy · Wireshark · Sleuth Kit · zsteg · steghide</p>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
+      <h3><a href="https://github.com/mastervegeta/apk-drill">apk-drill</a></h3>
+      <span class="tag">Security tooling</span>
+    </div>
+    <p>A single-machine pipeline that searches Android APKs for leaked secrets
+    during authorized bug-bounty work. It downloads each APK, extracts it,
+    scans it with TruffleHog (which checks whether found keys are still live),
+    and writes a Markdown report with a remediation plan. Files are deleted
+    after each package, and an error in one package doesn't stop the run.</p>
+    <pre class="pipeline mono">scope → apkeep → extract → trufflehog → results.jsonl → report.md</pre>
+    <ul class="highlights">
+      <li>Builds package lists from HackerOne, Bugcrowd, Intigriti and YesWeHack scopes, keeping only in-scope Android assets</li>
+      <li>Additional modules: API surface mapping, CORS and authorization probes, JWT analysis, SDK→CVE mapping, blast-radius estimates for leaked keys</li>
+      <li>Runs daily under cron on a home server; watches for app updates and new programs</li>
+    </ul>
+    <p class="stack mono">Python · Bash · TruffleHog · apkeep · cron</p>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
+      <h3><a href="https://github.com/mastervegeta/Text-to-speech-for-Anki-cards">Anki text-to-speech</a></h3>
+      <span class="tag">Language learning</span>
+    </div>
+    <p>Adds spoken audio to Anki flashcards. You choose a deck; the
+    script reads each note's <code>Word</code> or <code>Sentence</code> through
+    AnkiConnect, generates speech with gTTS, saves it to the collection's media
+    folder and fills in the card's <code>Audio</code> field. It started as a
+    CSV-driven script and now has a desktop GUI.</p>
+    <ul class="highlights">
+      <li>Japanese, Mandarin, Korean, Spanish, French, Swedish, Arabic, English</li>
+      <li>Talks to Anki directly through AnkiConnect; no CSV exports needed</li>
+      <li>customtkinter GUI, so you don't have to edit the source to use it</li>
+    </ul>
+    <p class="stack mono">Python · gTTS · AnkiConnect · customtkinter</p>
+  </article>
+
+  <h3 class="minor-title">Smaller projects</h3>
+  <ul class="minor">
+    <li><a href="https://github.com/mastervegeta/password_hasher">password_hasher</a>: finds a password by comparing simple hashes against an extracted one</li>
+    <li><a href="https://github.com/mastervegeta/prime_number_finder">prime_number_finder</a>: finds all primes up to n</li>
+    <li><a href="https://github.com/mastervegeta/Calculator">Calculator</a>: a simple calculator</li>
+  </ul>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Security</dt><dd>Forensics (pcap, disk images, steganography), side-channel and RSA attacks, reverse engineering, Android app analysis, recon for authorized bug bounties</dd>
+    <dt>Languages</dt><dd>Python, Bash, Java (reading), Rust (learning)</dd>
+    <dt>Tools</dt><dd>Wireshark, Sleuth Kit, pwntools, Frida, mitmproxy, TruffleHog, adb / Android emulator, Git + GitHub Actions</dd>
+    <dt>Other</dt><dd>Web scraping and data pipelines (sports-betting odds), automation on Linux servers</dd>
+  </dl>
+</section>
+
+<footer>
+  <p class="mono">© 2026 Veikka Kortelainen · <a href="https://github.com/mastervegeta">github.com/mastervegeta</a></p>
+</footer>
+
+</main>
+</body>
+</html>
