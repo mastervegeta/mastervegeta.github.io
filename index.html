@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Veikka Kortelainen</title>
-<meta name="description" content="Veikka Kortelainen: CTF writeups, security tooling and small Python projects.">
+<meta name="description" content="Veikka Kortelainen — security researcher and bug-bounty hunter. Authorized web and mobile app testing, CTF writeups and security tooling.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -16,16 +16,63 @@
 <header class="hero">
   <p class="mono kicker">~/mastervegeta $ whoami</p>
   <h1>Veikka Kortelainen</h1>
-  <p class="lede">I work on security: CTF challenges, bug-bounty tooling and
-  Android app analysis. I write down how each problem was actually solved,
-  including the approaches that didn't work.</p>
+  <p class="lede">Security researcher and bug-bounty hunter. I test real
+  companies' web and mobile applications under authorized programs, find
+  vulnerabilities, and write them up as clear, reproducible reports. Alongside
+  that I solve CTF challenges and build my own tooling for recon and analysis —
+  and I document how each problem was actually solved, dead ends included.</p>
   <nav class="links">
     <a href="https://github.com/mastervegeta">GitHub</a>
     <a href="https://learn.cylabacademy.org/users/xxtentacion">CyLab Academy</a>
+    <a href="#bounty">Bug bounty</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
   </nav>
+  <ul class="focus mono">
+    <li>web &amp; API testing</li>
+    <li>Android app analysis</li>
+    <li>responsible disclosure</li>
+  </ul>
 </header>
+
+<section id="bounty">
+  <h2>Bug bounty &amp; vulnerability research</h2>
+  <p class="section-lede">I hunt for real, exploitable vulnerabilities in
+  production applications through authorized bug-bounty programs on platforms
+  like HackerOne, Bugcrowd, Intigriti and YesWeHack. Every target I touch is
+  in scope and covered by the program's rules — I test only what I'm allowed
+  to, use a single non-destructive proof-of-concept, and disclose responsibly
+  through the program so the company can fix the issue.</p>
+
+  <div class="bounty-grid">
+    <div class="bounty-card">
+      <h3>What I look for</h3>
+      <p>Broken access control and IDOR/BOLA, authentication and OAuth/SSO
+      flaws leading to account takeover, business-logic abuse, and injection.
+      I focus on authenticated and mobile-backed surfaces, where fewer people
+      look and findings are less likely to be duplicates.</p>
+    </div>
+    <div class="bounty-card">
+      <h3>How I work</h3>
+      <p>Recon and attack-surface mapping first, then hands-on testing against
+      web APIs and Android apps — decrypting app traffic with a rooted emulator,
+      Frida and mitmproxy to reach the API underneath, and reasoning about each
+      endpoint's authorization model rather than running a scanner over it.</p>
+    </div>
+    <div class="bounty-card">
+      <h3>The report</h3>
+      <p>Each finding becomes a written report: affected asset, root cause and
+      CWE, a minimal step-by-step proof of concept, impact, and a concrete
+      remediation plan. The goal is a report a triager can reproduce in minutes
+      and an engineer can fix without a second round of questions.</p>
+    </div>
+  </div>
+
+  <p class="bounty-note">Some of this work is under private programs and NDAs,
+  so specific targets and live findings aren't published here. The public
+  tooling below — <a href="#projects">apk-drill</a> and the recon pipelines
+  built on it — is the part of that workflow I can share.</p>
+</section>
 
 <section id="projects">
   <h2>Projects</h2>
