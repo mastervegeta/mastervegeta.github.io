@@ -79,6 +79,43 @@
 
   <article class="project featured">
     <div class="project-head">
+      <h3>Bet-Terminal</h3>
+      <span class="tag">Data pipeline · Web app</span>
+    </div>
+    <p>An arbitrage finder for sports betting. It scrapes odds from 15
+    Nordic-facing bookmakers every few minutes, matches the same fixture across
+    books against a canonical league and team registry, and flags arbitrages:
+    sets of bets on every outcome, at different books, that guarantee a profit.
+    Each leg is also compared with a sharp reference book (Pinnacle, or Veikkaus
+    for Finnish leagues) to show how much value it holds on its own.</p>
+    <figure class="demo">
+      <video controls muted playsinline preload="metadata" poster="assets/bet-terminal/poster.jpg" width="1680" height="920">
+        <source src="assets/bet-terminal/demo.mp4" type="video/mp4">
+      </video>
+      <figcaption>One-minute walkthrough: sign in, pick an arb, and open the
+      bookmaker's market straight from the quick-launch panel.</figcaption>
+    </figure>
+    <div class="phones">
+      <figure>
+        <a href="assets/bet-terminal/mobile-arbs.jpg"><img src="assets/bet-terminal/mobile-arbs.jpg" alt="Bet-Terminal mobile view: list of arbitrage opportunities sorted by profit, with filters and bookmaker tags" width="720" height="1240" loading="lazy"></a>
+        <figcaption>Mobile: arbs sorted by profit</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/bet-terminal/mobile-login.jpg"><img src="assets/bet-terminal/mobile-login.jpg" alt="Bet-Terminal mobile sign-in screen" width="720" height="1098" loading="lazy"></a>
+        <figcaption>Mobile: invite-only sign-in</figcaption>
+      </figure>
+    </div>
+    <ul class="highlights">
+      <li>Football, ice hockey, tennis, basketball, darts and CS2: 1X2, Asian handicap, totals, team totals, BTTS, corners, cards and first-half markets</li>
+      <li>Stake split per leg and one-click links to each book's bet page; bet history and settlement are tracked per user</li>
+      <li>Desktop terminal UI and a mobile layout, plus a per-user Telegram alert bot</li>
+      <li>Runs 24/7 on a home server as an 8-service Docker Compose stack (scraper, matcher, settler, web, bots, PostgreSQL, backups)</li>
+    </ul>
+    <p class="stack mono">Python · FastAPI · PostgreSQL · Docker Compose · JavaScript · Telegram Bot API</p>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
       <h3><a href="https://github.com/mastervegeta/ctf-writeups">ctf-writeups</a></h3>
       <span class="tag">Security · Writing</span>
     </div>
@@ -155,7 +192,7 @@
     <dt>Security</dt><dd>Forensics (pcap, disk images, steganography), side-channel and RSA attacks, reverse engineering, Android app analysis, recon for authorized bug bounties</dd>
     <dt>Languages</dt><dd>Python, Bash, Java (reading), Rust (learning)</dd>
     <dt>Tools</dt><dd>Wireshark, Sleuth Kit, pwntools, Frida, mitmproxy, TruffleHog, adb / Android emulator, Git + GitHub Actions</dd>
-    <dt>Other</dt><dd>Web scraping and data pipelines (sports-betting odds), automation on Linux servers</dd>
+    <dt>Other</dt><dd>Web scraping and data pipelines (sports-betting odds), FastAPI, PostgreSQL, Docker Compose, automation on Linux servers</dd>
   </dl>
 </section>
 
